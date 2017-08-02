@@ -52,5 +52,6 @@ dependencies {
 
     // ButterKnife
     compile "com.jakewharton:butterknife:$rootProject.BUTTER_KNIFE_VERSION"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.BUTTER_KNIFE_VERSION"
 
 }

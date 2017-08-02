@@ -15,6 +15,8 @@ import java.util.List;
 
 import br.com.tiago.agenda.R;
 import br.com.tiago.agenda.model.Aluno;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by TiagoCabral on 8/1/2017.
@@ -53,6 +55,9 @@ public class AlunoArrayAdapter extends ArrayAdapter<Aluno> {
 
     @Override
     public void addAll(Collection<? extends Aluno> collection) {
+        if (alunos.size() > 0) {
+            alunos.clear();
+        }
         alunos.addAll(collection);
         notifyDataSetChanged();
     }
@@ -79,14 +84,14 @@ public class AlunoArrayAdapter extends ArrayAdapter<Aluno> {
         notifyDataSetChanged();
     }
 
-//    @BindView(R.id.item_nome_novo)
-//    TextView campoNome;
-//
-//    @BindView(R.id.item_telefone)
-//    TextView campoTelefone;
-//
-//    @BindView(R.id.item_endereco)
-//    TextView campoEndereco;
+    @BindView(R.id.item_nome)
+    TextView campoNome;
+
+    @BindView(R.id.item_telefone)
+    TextView campoTelefone;
+
+    @BindView(R.id.item_endereco)
+    TextView campoEndereco;
 
     @NonNull
     @Override
@@ -97,11 +102,11 @@ public class AlunoArrayAdapter extends ArrayAdapter<Aluno> {
             convertView = LayoutInflater.from(context).inflate(R.layout.list_item, null);
         }
 
-        //ButterKnife.bind(this, convertView);
+        ButterKnife.bind(this, convertView);
 
-        TextView campoNome = (TextView) convertView.findViewById(R.id.item_nome);
-        TextView campoTelefone = (TextView) convertView.findViewById(R.id.item_telefone);
-        TextView campoEndereco = (TextView) convertView.findViewById(R.id.item_endereco);
+//        TextView campoNome = (TextView) convertView.findViewById(R.id.item_nome);
+//        TextView campoTelefone = (TextView) convertView.findViewById(R.id.item_telefone);
+//        TextView campoEndereco = (TextView) convertView.findViewById(R.id.item_endereco);
 
         campoNome.setText(aluno.getNome());
         campoTelefone.setText(aluno.getTelefone());

@@ -19,6 +19,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ui.activity.AgendaFormularioActivity" />
+        <activity android:name=".ui.activity.BaseActivity" />
+
 
     </application>
 

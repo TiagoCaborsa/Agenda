@@ -1,4 +1,4 @@
-package br.com.tiago.agenda.presentation.presenter;
+package br.com.tiago.agenda.presentation.presenter.impl;
 
 import android.util.Log;
 
@@ -6,6 +6,7 @@ import java.util.List;
 
 import br.com.tiago.agenda.interactor.AgendaInteractor;
 import br.com.tiago.agenda.model.Aluno;
+import br.com.tiago.agenda.presentation.presenter.ListaAgendaPresenter;
 import br.com.tiago.agenda.ui.activity.ListaAgendaActivity;
 import rx.Observable;
 import rx.Subscriber;
@@ -50,7 +51,8 @@ public class ListaAgendaPresenterImpl implements ListaAgendaPresenter {
                     @Override
                     public void onError(Throwable e) {
                         Log.e("ERRO", "Método ListaAgendaPresenterImpl.carregarLista onError ", e);
-                        mView.showToastLongTime("Não foi possível carregar os alunos!");
+                        mView.showToastLongTime("Espere um pouco e tente novamente...");
+                        mView.showToastLongTime("Espere um pouco e tente novamente...");
                     }
 
                     @Override

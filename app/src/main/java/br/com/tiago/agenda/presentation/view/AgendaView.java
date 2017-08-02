@@ -16,12 +16,4 @@ public interface AgendaView extends BaseView {
         }
     }
 
-    interface Insere {
-        interface Activity extends AgendaView {
-            void inserir(Aluno pacote);
-        }
-
-
-    }
-
 }

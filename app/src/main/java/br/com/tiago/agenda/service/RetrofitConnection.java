@@ -15,7 +15,7 @@ public class RetrofitConnection {
     private static final OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder();
     private static final HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
     private static final HttpLoggingInterceptor.Level loggingLevel = HttpLoggingInterceptor.Level.BODY;
-    private static final String BASE_URL = "http://private-d9ee5-agenda10.apiary-mock.com/";
+    private static final String BASE_URL = "https://powerful-mesa-50660.herokuapp.com/";
 
     public static <S> S connect(Class<S> serviceClass) {
         loggingInterceptor.setLevel(loggingLevel);
