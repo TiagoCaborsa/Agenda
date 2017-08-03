@@ -44,14 +44,12 @@ public class ListaAgendaPresenterImpl implements ListaAgendaPresenter {
                     }
 
                     @Override
-                    public void onCompleted() {
-                        mView.showToastLongTime("Carregado com sucesso!");
-                    }
+                    public void onCompleted() {}
 
                     @Override
                     public void onError(Throwable e) {
                         Log.e("ERRO", "Método ListaAgendaPresenterImpl.carregarLista onError ", e);
-                        mView.showToastLongTime("Espere um pouco e tente novamente...");
+                        mView.showToastLongTime("Servidor inativo...");
                         mView.showToastLongTime("Espere um pouco e tente novamente...");
                     }
 

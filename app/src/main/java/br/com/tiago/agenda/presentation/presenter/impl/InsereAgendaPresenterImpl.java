@@ -8,6 +8,7 @@ import br.com.tiago.agenda.interactor.AgendaInteractor;
 import br.com.tiago.agenda.model.Aluno;
 import br.com.tiago.agenda.presentation.presenter.InsereAgendaPresenter;
 import br.com.tiago.agenda.ui.activity.AgendaFormularioActivity;
+import br.com.tiago.agenda.ui.activity.ListaAgendaActivity;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
@@ -38,12 +39,14 @@ public class InsereAgendaPresenterImpl implements InsereAgendaPresenter {
 
                     @Override
                     public void onStart() {
+                        mView.showToastShortTime("Salvando...");
                         super.onStart();
                     }
 
                     @Override
                     public void onCompleted() {
-                        mView.showToastLongTime("Salvo com sucesso!");
+                        mView.showToastShortTime("Salvo com sucesso!");
+                        mView.finish();
                     }
 
                     @Override

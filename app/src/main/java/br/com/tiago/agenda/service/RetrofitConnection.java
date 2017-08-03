@@ -17,7 +17,7 @@ public class RetrofitConnection {
     private static final HttpLoggingInterceptor.Level loggingLevel = HttpLoggingInterceptor.Level.BODY;
     private static final String BASE_URL = "https://powerful-mesa-50660.herokuapp.com/";
 
-    public static <S> S connect(Class<S> serviceClass) {
+    public static <T> T connect(Class<T> serviceClass) {
         loggingInterceptor.setLevel(loggingLevel);
         httpClientBuilder.interceptors().add(loggingInterceptor);
 

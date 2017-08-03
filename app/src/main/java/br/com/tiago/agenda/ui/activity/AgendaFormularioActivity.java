@@ -39,14 +39,14 @@ public class AgendaFormularioActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario);
         ButterKnife.bind(this);
-
         Intent intent = getIntent();
+
         if (intent.getSerializableExtra("aluno") != null) {
             aluno = (Aluno) intent.getSerializableExtra("aluno");
-
             campoNome.setText(aluno.getNome());
             campoEndereco.setText(aluno.getEndereco());
             campoTelefone.setText(aluno.getTelefone());
+
         } else {
             aluno = new Aluno();
         }
@@ -58,9 +58,7 @@ public class AgendaFormularioActivity extends BaseActivity {
             aluno.setEndereco(campoEndereco.getText().toString());
             aluno.setTelefone(campoTelefone.getText().toString());
             salvarAluno(aluno);
-            finish();
         });
-
     }
 
     private void salvarAluno(Aluno aluno) {

@@ -52,11 +52,12 @@ public class ListaAgendaActivity extends BaseActivity implements AgendaView.List
             startActivity(intent);
         });
 
-        btnNovoAluno.setOnClickListener( v -> {
-            Intent intentVaiProFormulario = new Intent(ListaAgendaActivity.this, AgendaFormularioActivity.class);
-            startActivity(intentVaiProFormulario);
+        btnNovoAluno.setOnClickListener(v -> {
+            Intent intent = new Intent(ListaAgendaActivity.this, AgendaFormularioActivity.class);
+            startActivity(intent);
         });
 
+        carregarLista();
     }
 
     @Override
@@ -65,14 +66,12 @@ public class ListaAgendaActivity extends BaseActivity implements AgendaView.List
         carregarLista();
     }
 
-    void carregarLista() {
+    public void carregarLista() {
         listaAgendaPresenter.carregarLista();
     }
 
     public void addAll(List<Aluno> alunos) {
-        if (alunoArrayAdapter == null) {
-            return;
-        }
+        if (alunoArrayAdapter == null) return;
         alunoArrayAdapter.addAll(alunos);
     }
 
