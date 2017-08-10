@@ -1,32 +1,30 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/coordinator_layout">
 
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_lista"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:scrollbars="vertical" />
 
-        <ListView
-            android:id="@+id/lista_alunos"
-            android:layout_width="match_parent"
-            android:layout_height="420dp" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/novo_aluno"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/fundo"
+        android:stateListAnimator="@null"
+        android:text="AAAAAA"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="40sp"
+        app:elevation="@dimen/activity_horizontal_margin"
+        app:layout_anchor="@+id/recycler_lista"
+        app:layout_anchorGravity="bottom|right" />
 
-        <Button
-            android:id="@+id/novo_aluno"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/fundo"
-            android:elevation="6dp"
-            android:stateListAnimator="@null"
-            android:text="@string/adc_aluno"
-            android:textColor="#ffffff"
-            android:textSize="40sp"
-            android:layout_gravity="right"/>
+    <!--android:layout_gravity="bottom | right"-->
 
-    </LinearLayout>
-</ScrollView>
+</android.support.design.widget.CoordinatorLayout>
